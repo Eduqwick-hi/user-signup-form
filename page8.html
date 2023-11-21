@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your investment plan?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #logo {
+            margin-top: 20px;
+        }
+
+        #content {
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        #next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #next-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 18px;
+            color: #333;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        select {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <img id="logo" src="Eduqwick-logo-airoplane-3.png" alt="Logo">
+        </header>
+
+        <div id="content">
+            <h2>Let's help you find what's right for you in minutes.</h2>
+
+            <label for="financialInvest">What's your financial investment on your studies?</label>
+            <input type="text" id="financialInvest" name="financialInvest">
+
+            <button type="button" id="next-button" onclick="openPopup()">Next</button>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>Select Budget Type</h2>
+        <label>This budget is for?</label>
+        <select id="budgetSelection" onchange="handleSelection()">
+            <option value="Select one">Select one</option>
+            <option value="Annual Fee">Annual Fee</option>
+            <option value="totalFee">Total Fee</option>
+        </select>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function handleSelection() {
+            var selection = document.getElementById('budgetSelection').value;
+            // Add any additional logic based on the selected option
+            console.log("Selected option: " + selection);
+            window.location.href = 'page9.html';
+            // Close the popup after handling the selection
+            closePopup();
+        }
+
+        // Close the popup when the Esc key is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+
+</body>
+</html>

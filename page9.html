@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Want to apply scholarship?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #logo {
+            margin-top: 20px;
+        }
+
+        #content {
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input[type="radio"] {
+            display: none; /* Hide default radio button */
+        }
+
+        .radio-group {
+            display: inline-block;
+        }
+
+        label.radio-label {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+
+        input[type="radio"]:checked + label {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <img id="logo" src="Eduqwick-logo-airoplane-3.png" alt="Logo">
+        </header>
+
+        <div id="content">
+            <h3>Let's help you find what's right for you in minutes.</h3>
+
+            <label for="scholarship">Do you want to apply for Scholarship?</label>
+            <div class="radio-group">
+                <input type="radio" id="yes" name="scholarship" value="yes">
+                <label class="radio-label" for="yes">Yes</label>
+
+                <input type="radio" id="no" name="scholarship" value="no">
+                <label class="radio-label" for="no">No</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add an event listener to handle radio button changes
+        document.querySelectorAll('input[name="scholarship"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                // Check if 'Yes' is selected
+                if (document.getElementById('yes').checked) {
+                    // Redirect to page10.html for 'Yes'
+                    window.location.href = 'page10.html';
+                } else if (document.getElementById('no').checked) {
+                    // Redirect to another page (e.g., page10.html) for 'No'
+                    window.location.href = 'page10.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

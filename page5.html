@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your 10th score?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #logo {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #tagline {
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        #next-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        #next-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="logo">
+            <!-- Your logo image or text goes here -->
+            <img src="Eduqwick-logo-airoplane-3.png" alt="Logo">
+        </div>
+        <h3 id="tagline">Let's help you find what's right for you in minutes.</h3>
+        <form>
+            <label for="10thScore">What's your 10th score?</label>
+            <input type="text" id="10thScore" name="10thScore" required pattern="[0-9]*">
+
+            <label for="schoolName">What's your 10th class school name?</label>
+            <input type="text" id="schoolName" name="schoolName" required>
+
+            <label for="board">Select Board:</label>
+            <select id="board" name="board" required>
+                <option value="" disabled selected>Select your board</option>
+                <option value="CBSE">CBSE</option>
+                <option value="ICSC">ICSE</option>
+                <option value="StateBoard">State Board</option>
+                <option value="NIOS">NIOS</option>
+            </select>
+
+            <button type="button" id="next-button">
+                <a href="page6.html" class="next-button">Next</a>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
